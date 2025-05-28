@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaSpectra</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff351e, #00c6ff);
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .form-control {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+        }
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+            border: 1px solid #fff;
+        }
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card py-5 px-4">
+                    <h1 class="display-4 fw-bold">AquaSpectra</h1>
+                    <p class="lead mb-4">Upload an image of a water species or provide an image URL to identify the species and learn more details.</p>
+                    <form action="/predict" method="POST" enctype="multipart/form-data" class="mt-4">
+                        <!-- File upload -->
+                        <div class="mb-3">
+                            <label for="file-upload" class="form-label">Upload Image</label>
+                            <input type="file" id="file-upload" name="file" class="form-control">
+                        </div>
+                        <!-- URL input -->
+                        <div class="mb-3">
+                            <label for="url-upload" class="form-label">Or Provide an Image URL</label>
+                            <input type="url" id="url-upload" name="url" class="form-control" placeholder="Enter image URL">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">Identify</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 AquaSpectra | Underwater Species Exploration</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
